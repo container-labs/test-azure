@@ -21,19 +21,19 @@ jobs:
         username: ${{ secrets.AZURE_CLIENT_ID }}
         password: ${{ secrets.AZURE_CLIENT_SECRET }}
     - name: Docker meta
-        id: meta
-        uses: docker/metadata-action@v3
-        with:
-          flavor: |
-            latest=true
-          images: mdmichaelregistry.azurecr.io/${{ github.repository }}
-          tags: |
-            type=ref,event=branch
-            type=sha
-      - name: Build and push
-        id: docker-build
-        uses: docker/build-push-action@v2
-        with:
-          file: Dockerfile
-          push: true
-          tags: ${{ steps.meta.outputs.tags }}
+      id: meta
+      uses: docker/metadata-action@v3
+      with:
+        flavor: |
+          latest=true
+        images: mdmichaelregistry.azurecr.io/${{ github.repository }}
+        tags: |
+          type=ref,event=branch
+          type=sha
+    - name: Build and push
+      id: docker-build
+      uses: docker/build-push-action@v2
+      with:
+        file: Dockerfile
+        push: true
+        tags: ${{ steps.meta.outputs.tags }}
