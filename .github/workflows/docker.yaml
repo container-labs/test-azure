@@ -12,8 +12,8 @@ jobs:
       uses: azure/docker-login@v1
       with:
         login-server: mdmclacrecho.azurecr.io
-        username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
+        username: ${{ secrets.AZURE_CLIENT_ID }}
+        password: ${{ secrets.AZURE_CLIENT_SECRET }}
     - name: Docker meta
       id: meta
       uses: docker/metadata-action@v3
