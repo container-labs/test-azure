@@ -1,4 +1,4 @@
 FROM ubuntu
 
-RUN apt-get install -y curl
+RUN echo "hello world"
 
