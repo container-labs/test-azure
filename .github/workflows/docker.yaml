@@ -11,7 +11,7 @@ jobs:
     - name: Login to the Container Registry
       uses: azure/docker-login@v1
       with:
-        login-server: mdmichaelregistry.azurecr.io
+        login-server: mdmclacrecho.azurecr.io
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
     - name: Docker meta
@@ -20,7 +20,7 @@ jobs:
       with:
         flavor: |
           latest=true
-        images: mdmichaelregistry.azurecr.io/${{ github.repository }}
+        images: mdmclacrecho.azurecr.io/${{ github.repository }}
         tags: |
           type=ref,event=branch
           type=sha
