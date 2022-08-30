@@ -8,6 +8,9 @@ jobs:
   docker-release:
     name: Tagged Docker release to Google Artifact Registry
     runs-on: ubuntu-latest
+    permissions:
+      contents: 'read'
+      id-token: 'write'
 
     steps:
       - id: checkout
