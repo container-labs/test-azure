@@ -31,7 +31,7 @@ jobs:
         with:
           registry: us-west2-docker.pkg.dev
           username: oauth2accesstoken
-          password: $
+          password: ${{ steps.auth.outputs.access_token }}
       - name: Docker meta
         id: meta
         uses: docker/metadata-action@v3
