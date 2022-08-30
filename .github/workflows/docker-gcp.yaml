@@ -1,4 +1,8 @@
 name: Push Docker Image to GCP Artifact Registry
+on:
+  push:
+#     branches:
+#       - main
 
 jobs:
   docker-release:
